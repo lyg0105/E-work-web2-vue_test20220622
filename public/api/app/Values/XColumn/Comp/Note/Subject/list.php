@@ -1,0 +1,25 @@
+<?php
+$this->table='subject';
+$this->column_prefix='subject_';
+$this->x_column_list_arr=
+[
+    'subject_code'=>array('name'=>'코드','type'=>'int','length'=>'','pri'=>'PRI','width'=>'100'),
+    'subject_name'=>array('name'=>'계정과목','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+    'subject_class'=>array('name'=>'요소','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+    'subject_sort1'=>array('name'=>'구분1','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+    'subject_sort2'=>array('name'=>'구분2','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+    'subject_sort3'=>array('name'=>'구분3','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+    'subject_sort4'=>array('name'=>'구분4','type'=>'varchar','length'=>'50','pri'=>'','width'=>'100'),
+];
+$this->x_pri_col_arr=['subject_code'];
+$this->x_basic_col_arr=[];
+$this->x_view_col_arr=[];
+$this->select_col_arr=[];
+$this->is_number_col_arr=[];
+$this->is_tel_col_arr=[];
+$this->is_date_col_arr=[];
+$this->search_select_col_arr=[
+    's_date_type'=>[
+
+    ]
+];

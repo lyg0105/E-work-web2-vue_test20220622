@@ -1,5 +1,6 @@
 /node_modules
 /public/upload
 /vendor
+vendor
 .env
 .env.backup

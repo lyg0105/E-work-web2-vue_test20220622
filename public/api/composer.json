@@ -1,0 +1,9 @@
+{
+  "name": "litech/waste_logis",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
