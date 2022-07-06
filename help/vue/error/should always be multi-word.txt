@@ -1,0 +1,23 @@
+iscount.vue 파일안에
+
+export default {
+
+name: 'Discount-a'
+
+}
+
+이런식으로 '-' 이용해서 여러단어로 구성해주거나
+
+export default {
+
+//eslint-disable-next-line
+
+name: 'Discount'
+
+}
+
+이렇게 위해 주석 추가해주면 됩니다.
+
+처음꺼를 하자니 이름이 통일이 안되서 먼가 불편하고
+
+두번째꺼를 하자니 컴포넌트 마다 해줘야해서 불편하네요.

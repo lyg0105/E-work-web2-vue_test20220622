@@ -1,9 +1,10 @@
 <template>
   <div class="menu">
-    <a v-for="(menu,i) in menus" :key="i">
-      {{menu}}
-    </a>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
+  <router-view />
+  
   <h1>부동산 리스트</h1>
   <div v-for="(product,i) in products" :key="i">
     <img :src="require('@/assets/'+product.img)" class="room_img" >
