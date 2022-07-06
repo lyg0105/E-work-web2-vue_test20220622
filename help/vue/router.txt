@@ -1,5 +1,9 @@
 https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
 https://yemsu.github.io/vue3-router/
 
+https://router.vuejs.org/installation.html
+https://github.com/vuejs/router#vue-router-next-
+
 설치
-npm i vue-router@next
+//npm i vue-router@next
+npm install vue-router@4
