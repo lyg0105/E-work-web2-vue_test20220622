@@ -1,0 +1,21 @@
+https://github.com/axios/axios
+https://bongra.tistory.com/122
+
+npm install axios
+
+main.js에 불러오기
+
+import axios from "axios";
+
+const app = createApp(App) 
+app.config.globalProperties.$axios = axios; 
+app.mount('#app');
+
+
+컴포넌트에서 사용
+
+this.axios.get(URL+queryParams).then((response) => { // 실제 API를 요청한다
+  console.log(response.data);
+  this.movieList = response.data.response.body.items.item; // 받아온 데이터를 movieList 배열에 넣어준다.
+  console.log('영화목록 : ' + this.movieList);
+});

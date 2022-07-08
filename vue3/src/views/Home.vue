@@ -1,7 +1,6 @@
 <template>
   <h1>Home Page</h1>
   {{ counter }}
-  {{ times2 }}
   <button @click="inc">inc</button>
   {{m_count}}
 </template>
@@ -18,10 +17,10 @@ export default {
   setup() {
     const store = useStore();
     const counter = computed(() => store.state.counter);
-    const test = computed(() => store.getters);
+    const time2 = computed(() => store.getters);
     const inc = () => store.commit("setCounter", counter.value + 1);
 
-    return { counter, inc, test };
+    return { counter, inc, time2 };
   }
 }
 </script>

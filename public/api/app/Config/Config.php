@@ -21,6 +21,7 @@ class Config
         }
         $this->setConstant();
 
+        header("Access-Control-Allow-Origin: *");//모든 cors 허용
         ini_set("session.cookie_lifetime", 0); //초
         ini_set("session.cache_expire", 1440); //분
         ini_set("session.gc_maxlifetime", 86400); //초

@@ -30,15 +30,5 @@ class BaseModel
         $db_name=Env::get('DB_DATABASE', '');
         $db_charset='utf-8';
         $db_port=Env::get('DB_PORT', '');
-        if($server_num=='MAIN'){
-            $db_name=Env::get('DB_DATABASE', '');
-            $this->db->connect($db_host,$db_user,$db_pass,$db_name,$db_charset,$db_port);
-        }else if($server_num=='CALL'){
-            $db_name=Env::get('CALL_DB_DATABASE','call365');
-            $this->db->connect($db_host,$db_user,$db_pass,$db_name,$db_charset,$db_port);
-        }else if($server_num=='CHAZU'){
-            $db_name=Env::get('CHAZU_DB_DATABASE','zchazu');
-            $this->db->connect($db_host,$db_user,$db_pass,$db_name,$db_charset,$db_port);
-        }
     }
 }
