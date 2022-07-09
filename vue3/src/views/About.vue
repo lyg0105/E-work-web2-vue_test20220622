@@ -16,7 +16,7 @@ export default {
     submitForm(){
       const formData = new FormData();
       formData.append('email', "ggggg");
-      this.axios.post('http://vue.localhost/api/test/test/test',formData).then(res => {
+      this.axios.post('http://vue_api.localhost/api/test/test/test',formData).then(res => {
         console.log(res.data);
       })
     }
