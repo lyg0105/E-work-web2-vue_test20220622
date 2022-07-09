@@ -2,6 +2,7 @@
   <div class="menu">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <router-link to="/accodion">Accodion</router-link>
   </div>
   <router-view />
   
@@ -50,12 +51,6 @@ export default {
 </script>
 
 <style>
-body{
-  margin: 0;
-}
-div{
-  box-sizing: border-box;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

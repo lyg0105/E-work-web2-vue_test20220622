@@ -2,5 +2,6 @@
 /public/upload
 /vendor
 vendor
+dist
 .env
 .env.backup
