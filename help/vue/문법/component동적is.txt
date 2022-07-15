@@ -1,0 +1,40 @@
+동적 컴포넌트 (:is 사용)
+
+//선언
+const app = Vue.createApp({
+  data() {
+    return {
+      currentTab: 'Home',
+      tabs: ['Home', 'Posts', 'Archive']
+    }
+  },
+  computed: {
+    currentTabComponent() {
+      return 'tab-' + this.currentTab.toLowerCase()
+    }
+  }
+})
+
+app.component('tab-home', {
+  template: `<div class="demo-tab">Home component</div>`
+})
+app.component('tab-posts', {
+  template: `<div class="demo-tab">Posts component</div>`
+})
+app.component('tab-archive', {
+  template: `<div class="demo-tab">Archive component</div>`
+})
+
+//사용
+
+<button
+    v-for="tab in tabs"
+    v-bind:key="tab"
+    v-bind:class="['tab-button', { active: currentTab === tab }]"
+    v-on:click="currentTab = tab"
+  >
+  {{ tab }}
+</button>
+
+<!-- currentTabComponent가 변하면 컴포넌트가 바뀝니다.  -->
+<component :is="currentTabComponent"></component>

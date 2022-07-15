@@ -1,0 +1,94 @@
+https://v3.ko.vuejs.org/guide/component-props.html#%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8B%E1%85%B4-%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC-%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AF
+
+Props를 이용해 자식 컴포넌트에게 데이터 전달하기
+
+//컴포넌트선언
+app.component('blog-post', {
+  props: ['title'],
+  template: `<h4>{{ title }}</h4>`
+})
+
+//사용(데이터전달)
+<blog-post :title="My journey with Vue"></blog-post>
+
+
+
+이벤트와 함께 값 emit하기
+
+//선언
+app.component('blog-post', {
+  props: ['title'],
+  emits: ['enlarge-text']
+})
+
+//사용
+<button @click="$emit('enlarge-text', 0.1)">
+  Enlarge text
+</button>
+
+//메소드로사용
+<blog-post ... @enlarge-text="onEnlargeText"></blog-post>
+methods: {
+  onEnlargeText(enlargeAmount) {
+    this.postFontSize += enlargeAmount
+  }
+}
+
+
+컴포넌트에서 v-model 사용하기
+
+<custom-input
+  :model-value="searchText"
+  @update:model-value="searchText = $event"
+></custom-input>
+
+//선언
+app.component('custom-input', {
+  props: ['modelValue'],
+  template: `
+    <input
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    >
+  `
+})
+
+//사용
+<custom-input v-model="searchText"></custom-input>
+
+
+//선언 (또 다른 방법은 computed 속성의 기능을 사용하여 getter와 setter를 정의)
+app.component('custom-input', {
+  props: ['modelValue'],
+  template: `
+    <input v-model="value">
+  `,
+  computed: {
+    value: {
+      get() {
+        return this.modelValue
+      },
+      set(value) { this.$emit('update:modelValue', value)
+      }
+    }
+  }
+})
+
+
+
+슬롯(Slot)을 이용한 컨텐츠 제공
+
+//선언
+app.component('alert-box', {
+  template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+})
+
+//사용
+<alert-box>
+  Something bad happened.
+</alert-box>

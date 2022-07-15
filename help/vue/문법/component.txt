@@ -1,0 +1,36 @@
+https://v3.ko.vuejs.org/guide/component-basics.html#%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-%E1%84%8B%E1%85%A8%E1%84%8C%E1%85%A6
+
+app.component('my-component', {
+  /* ... */
+})
+
+예시) 전역으로 사용시
+
+//main.js에 전역으로 컴포넌트 선언
+
+//선언
+import my-component from './my-component.vue';
+app.component('my-component',my-component);
+
+//사용
+<template>
+  <my-component></my-component>
+</template>
+
+
+예시) 로컬로사용
+
+//사용
+<template>
+  <my-component></my-component>
+</template>
+
+//선언
+<script>
+import my-component from './my-component.vue';
+export default {
+  components{
+    my-component
+  }
+}
+</script>
